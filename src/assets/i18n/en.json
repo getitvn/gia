@@ -1,0 +1,16 @@
+{
+    "appName"   : "GIADMIN (en)",
+    "error404"  : {
+        "title"     : "404- PAGE NOT FOUND",
+        "message"   : "The page you are looking for could not be found. Check the address bar to ensure your URL is spelled correctly. If all else fails, you can visit our Dashboard page at the link below.",
+        "linkback"  : "Back to Dashboard"
+    },
+    "privatebrowser" : {
+        "title"     : "ALERT MESSAGE",
+        "message"   : "The page you are looking for does not support access in incognito mode, please switch to default mode."
+    },
+    "permissionpage" : {
+        "title"     : "ACCESS DENIED",
+        "message"   : "You do not have permission to access this page, please contact Administrator to request access."
+    }
+}
