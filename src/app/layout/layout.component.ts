@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-layout',
@@ -6,10 +8,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  private _routerEventsSubscription: Subscription;
+  isMobile  : boolean = false;
+  isTable   : boolean = false;
+  isDesktop : boolean = true;
+  isShowSidebar: boolean = false;
 
-  constructor() { }
+  constructor(private ngZone:NgZone,private router: Router) {
+    window.onresize = (e) => {
+      ngZone.run(() => {
+        this.checkIsShowSidebar();
+      });
+    };
+  }
 
   ngOnInit() {
+    this.checkIsShowSidebar();
+
+    this._routerEventsSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd && (this.isMobile || this.isTable)) {
+        this.isShowSidebar = !this.isShowSidebar;
+      }
+    });
+  }
+
+  checkIsShowSidebar(){
+    var chieurong = window.innerWidth;
+    if (chieurong<992) {
+      if(chieurong>480){
+        this.setVarTemplate(false, true, false);
+      }else{
+        this.setVarTemplate(true, false, false);
+      }
+    }else{
+      this.setVarTemplate(false, false, true);
+    }
+  }
+
+  setVarTemplate(mobile:boolean, table:boolean, desktop:boolean){
+    this.isMobile   = mobile;
+    this.isTable    = table;
+    this.isDesktop  = desktop;
   }
 
 }

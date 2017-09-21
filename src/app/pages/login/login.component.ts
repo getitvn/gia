@@ -7,19 +7,19 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  returnUrl: string;
 
   constructor(private route: ActivatedRoute, private router: Router) { 
   }
 
   ngOnInit() {
     localStorage.removeItem('_signedin');
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   login() {
     localStorage.setItem('_signedin', 'true');
-    this.router.navigate([this.returnUrl]);
+    localStorage.setItem('_sidebarParent', 'dashboard');
+    localStorage.setItem('_sidebarChild', '');
+    this.router.navigate(['/dashboard']);
   }
   
 }
