@@ -50,6 +50,6 @@ import { PrivatebrowserComponent } from './pages/privatebrowser/privatebrowser.c
 })
 export class AppModule { 
   constructor(appTranslate: TranslateService){
-    appTranslate.setDefaultLang("vi");
+    appTranslate.setDefaultLang("en");
   }
 }

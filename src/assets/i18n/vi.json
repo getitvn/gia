@@ -12,5 +12,12 @@
     "permissionpage" : {
         "title"     : "QUYỀN TRUY CẬP",
         "message"   : "Bạn không có quyền truy cập vào trang này, vui lòng liên hệ quản trị viên để gửi yêu cầu"
+    },
+    "sidebar"   : {
+        "dashboard" : "Trang tổng quát",
+        "sample"    : "Ví dụ",
+        "users"     : "Tài khoản",
+        "users_profile" : "Thông tin tài khoản",
+        "users_addnew"  : "Thêm tài khoản mới"
     }
 }

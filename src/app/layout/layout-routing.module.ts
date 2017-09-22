@@ -15,6 +15,7 @@ const routes: Routes = [
           { path: 'dashboard', component: DashboardComponent },
           { path: 'sample', component: SampleComponent },
           { path: 'profile', component: ProfileComponent },
+          { path: 'gotoprofile', redirectTo: 'profile', pathMatch: 'full' },
           { path: 'addnewuser', component: AddnewuserComponent }
       ]
   }

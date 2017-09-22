@@ -12,5 +12,12 @@
     "permissionpage" : {
         "title"     : "ACCESS DENIED",
         "message"   : "You do not have permission to access this page, please contact Administrator to request access."
+    },
+    "sidebar"   : {
+        "dashboard" : "Dashboard",
+        "sample"    : "Sample",
+        "users"     : "Users",
+        "users_profile" : "Profiles",
+        "users_addnew"  : "Add New Users"
     }
 }

@@ -1,30 +1,13 @@
 <div id="wrapper">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-        <a class="navbar-toggle" (click)="isShowSidebar = !isShowSidebar;"><i class="fa fa-bars" aria-hidden="true"></i></a>
-        <a class="navbar-brand" href="#"><img src="assets/images/logo-giadmin-light.svg" height="30" class="d-inline-block align-top" alt=""></a>
-        <div class="navbar-spacer"></div>
-        <div class="navbar-options">
-            <div class="btn-group">
-                <button type="button" class="btn btn-options dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user-circle mr-2" aria-hidden="true"></i>Inspire 4DEV
-                </button>
-                <div class="dropdown-menu dropdown-menu-right text-right">
-                    <button class="dropdown-item" type="button">Action</button>
-                    <button class="dropdown-item" type="button">Another action</button>
-                    <button class="dropdown-item" type="button">Something else here</button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <app-topbar></app-topbar>
     <div class="overlaysidebar" [class.show]="isShowSidebar" (click)="isShowSidebar = !isShowSidebar;"></div>
     <div class="container-fluid">
-        <nav class="bg-light sidebar" id="sidebar" [class.show]="isShowSidebar">
+        <nav class="bg-light sidebar" [class.show]="isShowSidebar">
             <app-sidebar></app-sidebar>
         </nav>
-
         <main class="content-wrapper" role="main">
             <router-outlet></router-outlet>
-            <footer class="small"><img src="assets/images/logo-giadmin-black.svg" height="15" class="d-inline-block align-top mr-1" alt="">Powered by GetIT VN ©2017</footer>
+            <app-footer></app-footer>
         </main>
     </div>
 </div>

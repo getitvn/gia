@@ -17,22 +17,22 @@ export interface Menu {
 const MENUITEMS = [
     {
       state   : 'dashboard',
-      name    : 'Dashboard',
+      name    : 'sidebar.dashboard',
       type    : 'link',
       icon    : 'fa-dashboard'
     },{
       state   : 'sample',
-      name    : 'Sample',
+      name    : 'sidebar.sample',
       type    : 'link',
       icon    : 'fa-object-ungroup'
     },{
       state   : 'users',
-      name    : 'Users',
+      name    : 'sidebar.users',
       type    : 'sub',
       icon    : 'fa-users',
       children: [
-        {state    : 'profile', name: 'Profile'},
-        {state    : 'addnewuser', name: 'Add New User'}
+        {state    : 'profile', name: 'sidebar.users_profile'},
+        {state    : 'addnewuser', name: 'sidebar.users_addnew'}
       ]
     }
 ];

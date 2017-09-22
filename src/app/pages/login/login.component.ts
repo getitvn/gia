@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('_signedin', 'true');
     localStorage.setItem('_sidebarParent', 'dashboard');
     localStorage.setItem('_sidebarChild', '');
+    localStorage.setItem('_currentLanguage', 'en');
     this.router.navigate(['/dashboard']);
   }
   

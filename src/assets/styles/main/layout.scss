@@ -1,0 +1,69 @@
+a, button {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#wrapper{
+    padding-top: $chieusau_topbar +10px;
+}
+
+footer{
+    border-top: 1px solid $light;
+    margin-top: 15px;
+    padding-top: 5px;
+    line-height: 16px;
+    color: $mauchu;
+}
+
+.sidebar {
+    position: fixed;
+    top: $chieusau_topbar;
+    bottom: 0;
+    left: 0;
+    z-index: $index_sidebar;
+    padding: 0;
+    width: $chieurong_sidebar;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #CCC;
+}
+
+.content-wrapper{
+    padding-left: $chieurong_sidebar;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        left: -$chieurong_sidebar;
+        width: $chieurong_sidebar;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        border-right: none;
+        transition: $hieuung;
+    }
+
+    .sidebar.show{
+        left: 0px;
+        background-color: $mauchu;
+        transition: $hieuung;
+    }
+
+    .content-wrapper{ padding: 0; }
+
+    .overlaysidebar {
+        display: none;
+        position: fixed;
+        z-index: $index_overlay;
+        padding: 0;
+        top: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: $hieuung;
+    }
+
+    .overlaysidebar.show {
+        display: block;
+        transition: $hieuung;
+    }
+}

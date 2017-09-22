@@ -3,7 +3,7 @@
 @import './bootstrap/bootstrap';
 @import './font-awesome/scss/font-awesome';
 
-a, button {
-    outline: none !important;
-    box-shadow: none !important;
-}
+@import './main/layout';
+@import './main/topbar';
+@import './main/sidebar';
+

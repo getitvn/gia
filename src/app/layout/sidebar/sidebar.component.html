@@ -1,13 +1,16 @@
-<div *ngFor="let menuitem of sidebaritems.getAll()">
-    <a *ngIf="menuitem.type === 'link'" class="btn btn-link sidebar-menu-item" (click)="gotoUrl(menuitem.state, menuitem.state)" [class.active]="menuitem.state === currentParent">
-        <i class="fa fa-fw {{menuitem.icon}} mr-3"></i>{{menuitem.name}}
-    </a>
-    <div *ngIf="menuitem.type === 'sub'" class="item">
-        <a class="btn btn-link sidebar-menu-item hasSub" data-toggle="collapse" aria-pressed="true" href="#mnu{{menuitem.name}}" data-parent="#sidebar-menu" [class.active]="menuitem.state === currentParent">
-            <i class="fa fa-fw {{menuitem.icon}} mr-3"></i>{{menuitem.name}} 
+<div class="sidebarcontent">
+    <div *ngFor="let menuitem of sidebaritems.getAll()">
+        <a *ngIf="menuitem.type === 'link'" class="btn btn-link sidebar-menu-item" (click)="gotoUrl(menuitem.state, menuitem.state)" [class.active]="menuitem.state === currentParent">
+            <i class="fa fa-fw {{menuitem.icon}} mr-3"></i>{{menuitem.name | translate}}
         </a>
-        <div class="collapse submenu" id="mnu{{menuitem.name}}" role="tabpanel" [class.show]="menuitem.state === currentParent">
-            <a *ngFor="let childitem of menuitem.children" class="btn btn-link sidebar-menu-item" (click)="gotoUrl(childitem.state, menuitem.state)" [class.active]="childitem.state === currentChild">{{childitem.name}}</a>
+        <div *ngIf="menuitem.type === 'sub'" class="item">
+            <a class="btn btn-link sidebar-menu-item hasSub" data-toggle="collapse" aria-pressed="true" href="#mnu{{menuitem.state}}" data-parent="#sidebar-menu" [class.active]="menuitem.state === currentParent">
+                <i class="fa fa-fw {{menuitem.icon}} mr-3"></i>{{menuitem.name | translate}} 
+            </a>
+            <div class="collapse submenu" id="mnu{{menuitem.state}}" role="tabpanel" [class.show]="menuitem.state === currentParent">
+                <a *ngFor="let childitem of menuitem.children" class="btn btn-link sidebar-menu-item" (click)="gotoUrl(childitem.state, menuitem.state)" [class.active]="childitem.state === currentChild">{{childitem.name | translate}}</a>
+            </div>
         </div>
     </div>
 </div>
+

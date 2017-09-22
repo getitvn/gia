@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+  <a class="buttonMenuSidebar" (click)="toggleSidebar()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+  <a class="navbar-brand" href="#"><img src="assets/images/logo-giadmin-light.svg" height="30" class="d-inline-block align-top" alt=""></a>
+  
+  <div class="topbar-spacer"></div>
+
+  <div class="topbar-options">
+    <div class="topbar-userinfo">
+        <button type="button" class="btn btn-options" data-toggle="dropdown">
+            <i class="fa fa-user-circle mr-2" aria-hidden="true"></i>Inspire 4DEV
+        </button>
+        <div class="dropdown-menu topbar-userinfo-content">
+            <div class="user-info">
+                <dl class="row text-left">
+                    <dt class="col-sm-3"><img src="http://via.placeholder.com/250x250" class="rounded float-left" alt="Avatar"></dt>
+                    <dd class="col-sm-9">
+                        <strong>Inspire 4DEV</strong><br>
+                        <small>inspire4dev@gmail.com</small>
+                    </dd>
+                </dl>
+            </div>
+            <ul class="nav nav-pills nav-fill user-info-action">
+                <li class="nav-item">
+                    <a class="btn btn-link" href="/logout">Logout <i class="fa fa-sign-out ml-2" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <div class="topbar-options">
+    <div class="topbar-language">
+        <button type="button" class="btn btn-options" data-toggle="dropdown">
+            <i class="fa fa-language mr-2" aria-hidden="true"></i><span *ngIf="currentLanguage==='en'"> EN</span><span *ngIf="currentLanguage==='vi'"> VI</span>
+        </button>
+        <div class="dropdown-menu topbar-language-content">
+            <ul class="nav flex-column language-action">
+                <li class="nav-item">
+                    <a class="btn btn-link" (click)="switchLanguage('en')">
+                        <i class="fa fa-check mr-2" *ngIf="currentLanguage==='en'"></i>English 
+                        <img src="assets/images/flag-us.png" class="float-left" alt="US Flag" height="14px">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-link" (click)="switchLanguage('vi')">
+                        <i class="fa fa-check mr-2" *ngIf="currentLanguage==='vi'"></i>Tiếng Việt
+                        <img src="assets/images/flag-vn.png" class="float-left" alt="VN Flag" height="14px">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</nav>

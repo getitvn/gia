@@ -1,0 +1,98 @@
+a.buttonMenuSidebar{
+    display: none;
+}
+
+.topbar-spacer{
+    flex: 1 1 auto;
+}
+
+.topbar-userinfo{
+    button.btn-options {
+        background-color: $blue;
+        color: white;
+    }
+}
+
+.topbar-userinfo.show{
+    button.btn-options {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.topbar-userinfo-content{
+    right: 10px !important;
+    left: auto;
+    padding: 0;
+
+    dl.row{ margin: 0; }
+
+    .user-info{
+        padding: 15px 0px;
+        background-color: $light;
+    }
+
+    .user-info > dl > dt > img{
+        width: 50px;
+        height: 50px;
+    }
+
+    ul.user-info-action > li {
+        a {
+            width: 100%;
+            font-size: 13px;
+            color: $mauchu;
+            text-decoration: none;
+        }
+    
+        a:hover{ background-color: darken($light, 15%); }
+    }
+}
+
+.topbar-language{
+    button.btn-options {
+        background-color: $blue;
+        color: white;
+    }
+}
+
+.topbar-language.show{
+    button.btn-options {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.topbar-language-content{
+    right: 10px !important;
+    left: auto;
+    padding: 0;
+
+    ul.language-action > li {
+        a {
+            text-align: right;
+            width: 100%;
+            font-size: 13px;
+            color: $mauchu;
+            text-decoration: none;
+        }
+    
+        a:hover{ background-color: darken($light, 15%); }
+    }
+}
+
+@media (max-width: 575px) {
+    .topbar-options{
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    a.buttonMenuSidebar{
+        display: block;
+        width: 25px;
+        height: 40px;
+        color: white !important;
+        line-height: 40px;
+    }
+
+    a:hover.buttonMenuSidebar{ color: white; }
+}
