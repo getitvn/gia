@@ -1,0 +1,77 @@
+<h3>FILE UPLOAD</h3>
+<hr>
+<div class="row">
+  <div class="col-sm-12 col-md-5 col-lg-4 mb-3">
+    
+
+    <div class="drop-container" ngFileDrop (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'is-drop-over': dragOver }">
+        Drag and drop Files Here to Upload
+    </div>
+    <div class="file">
+        <input type="file" ngFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
+        <label for="file" class="btn btn-primary btn-block btn-sm">Select Files</label>
+    </div>
+    <div class="uploads" *ngIf="files?.length">
+
+      <p class="title">QUEUE</p>
+      <div class="upload-item" *ngFor="let f of files; let i = index;">
+        <div class="upload-item-top">
+            <div class="progress-bar-container">
+              <div class="bar" [style.width]="f.progress.data.percentage + '%'" [class.green]="f.progress.data.percentage === 100"></div>
+            </div>
+            <div class="row rowqueue">
+              <div class="col col1">
+                <span class="filename">{{i}}.{{ f.name }}</span>
+              </div>
+              <div class="col col2">
+                <span class="progress-data"> {{ f.progress.data.speedHuman }} </span>
+              </div>
+              <div class="col col3">
+                <span class="x" (click)="removeFile(f.id)"><i class="fa fa-times" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-success btn-block btn-sm" (click)="startUpload()">
+        <i class="fa fa-fw fa-upload mr-1"></i>Start Upload
+    </button>
+  </div>
+  <div class="col-sm-12 col-md-7 col-lg-8">
+      <p class="title">RECENT COMPLETED</p>
+      <div class="d-flex flex-wrap">
+          <dl class="m-2" *ngFor="let fcompleted of filescompleted; let icompleted = index;">
+              <a  data-toggle="modal" [attr.data-target]="'#' + fcompleted.id">
+                  <img src="{{urlUploadFolder}}{{fcompleted.response.generatedName}}" class="rounded img-fluid thumbrecentcompleted" alt="{{ fcompleted.name }}">
+              </a>
+
+              <div class="modal fade" id="{{fcompleted.id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body fileupload">
+                        <img src="{{urlUploadFolder}}{{fcompleted.response.generatedName}}" class="rounded img-fluid" alt="{{ fcompleted.name }}">
+                    </div>
+                    <div class="modal-footer">
+                        <div class="input-group">
+                            <input type="text" class="form-control" value="{{urlUploadFolder}}{{fcompleted.response.generatedName}}" readonly #duongdanhinhanh>
+                            <span class="input-group-btn">
+                              <button class="btn btn-primary" type="button" [ngxClipboard]="duongdanhinhanh">Copy link</button>
+                            </span>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </dl>
+      </div>
+  </div>
+</div>
+
+
+
+

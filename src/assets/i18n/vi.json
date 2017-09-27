@@ -5,10 +5,6 @@
         "message"   : "Nội dung bạn yêu cầu không được tìm thấy trên hệ thống. Hãy kiểm tra lại liên kết bạn nhập vào. Nếu vẫn xảy ra thông báo lỗi, hãy truy cập Trang chủ bằng cách nhấp vào liên kết bên dưới để chuyển hướng chính xác đến trang yêu cầu",
         "linkback"  : "Trở về trang chủ"
     },
-    "privatebrowser" : {
-        "title"     : "THÔNG TIN HỆ THỐNG",
-        "message"   : "Hệ thống hiện không hỗ trợ yêu cầu từ trình duyệt ở chế độ ẩn danh, vui lòng chuyển sang chế độ mặc định của trình duyệt để tiếp tục."
-    },
     "permissionpage" : {
         "title"     : "QUYỀN TRUY CẬP",
         "message"   : "Bạn không có quyền truy cập vào trang này, vui lòng liên hệ quản trị viên để gửi yêu cầu"
@@ -16,6 +12,9 @@
     "sidebar"   : {
         "dashboard" : "Trang tổng quát",
         "sample"    : "Ví dụ",
+        "files"     : "Quản lý File",
+        "fileupload": "Tải file lên",
+        "filebrowser"   : "Duyệt file",
         "users"     : "Tài khoản",
         "users_profile" : "Thông tin tài khoản",
         "users_addnew"  : "Thêm tài khoản mới"

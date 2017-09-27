@@ -21,8 +21,10 @@
         color: white;
         transition: $hieuung ;
     }
-
     //Has Sub Item
+    a.hasSub{
+        border-top: 1px solid #EEE;
+    }
     a.hasSub:after{
         content: "\f107";
         font-family: FontAwesome;
@@ -51,7 +53,7 @@
 
     //Sub Menu Item
     .submenu{
-        background-color: $maubg_sidebar_submenu;
+        background-color: lighten($blue, 60%);;
 
         a { padding-left: 20px; }
         a:hover, a.active { background-color: lighten($blue, 10%); }

@@ -1,10 +1,31 @@
 <div class="container">
-  <form class="form-signin" (ngSubmit)="login()" >
-    <h2 class="form-signin-heading">Please sign in</h2>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  </form>
+    <alert></alert>
+    <form [formGroup]="userForm"  (ngSubmit)="login()">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="input"
+               formControlName="email" required autocomplete="off">
+      
+        <div *ngIf="formErrors.email" class="help is-danger">
+          {{ formErrors.email }}
+        </div>
+      
+        <label for="password">Password</label>
+        <input type="password" id="password" class="input"
+               formControlName="password" required >
+      
+        <div *ngIf="formErrors.password" class="help is-danger">
+          {{ formErrors.password }}
+        </div>
+      
+        <button type="submit" class="button" [disabled]="!userForm.valid">Submit</button>
+      
+        <span *ngIf="userForm.valid" class="help is-success">Form Looks Valid</span>
+      
+        <a *ngIf="!passReset && userForm.controls.email.valid" class="help is-info" (click)="resetPassword()">Reset Password for {{userForm.value.email}}?</a>
+        <p *ngIf="passReset" class="help is-info">Reset requested. Check your email instructions.</p>
+      
+        <button (click)="signInWithFacebook()" class="btn ">
+          <i class="fa fa-facebook fa-lg"></i> Connect Facebook
+        </button>
+      </form>
 </div>

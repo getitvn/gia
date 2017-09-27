@@ -19,6 +19,8 @@ export class PrivatebrowserGuard implements CanActivate {
 
   }
 
+  
+  //Kiểm tra trình duyệt có ở chế độ ẩn danh hay không (Safari Private Mode )
   checkisPrivateBrowser():boolean{
     var testKey = 'checkPrivateBrowser', storage = window.localStorage;
     try{

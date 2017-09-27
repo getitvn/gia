@@ -26,6 +26,15 @@ const MENUITEMS = [
       type    : 'link',
       icon    : 'fa-object-ungroup'
     },{
+      state   : 'files',
+      name    : 'sidebar.files',
+      type    : 'sub',
+      icon    : 'fa-file',
+      children: [
+        {state    : 'fileupload', name: 'sidebar.fileupload'},
+        {state    : 'filebrowser', name: 'sidebar.filebrowser'}
+      ]
+    },{
       state   : 'users',
       name    : 'sidebar.users',
       type    : 'sub',

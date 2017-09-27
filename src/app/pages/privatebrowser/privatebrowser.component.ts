@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-privatebrowser',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivatebrowserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appTranslate: TranslateService) {
+    appTranslate.setDefaultLang("en");
+  }
 
   ngOnInit() {
   }

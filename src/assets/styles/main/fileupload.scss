@@ -1,0 +1,79 @@
+.drop-container{
+    width: 100%;
+    text-align: center;
+    background-color: darken($light, 5%);
+    color: lighten($mauchu, 10%);
+    margin-bottom: 5px;
+    border: 1px dashed $blue;
+    transition: $hieuung;
+    padding: 20px 15px;
+}
+
+.drop-container:hover, .drop-container:focus{
+    background-color: darken($light, 2%);
+    border: 1px solid darken($blue, 5%);
+    transition: $hieuung;
+}
+
+.file { position: relative; }
+.file input {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    opacity: 0.01;
+    cursor: pointer;
+}
+
+p.title{
+    font-size: 22px; 
+    font-weight: 500;
+    color: #AAA;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px #CCC solid;
+}
+.uploads {
+    margin-bottom: 10px;
+}
+.rowqueue{
+    margin: 0;
+    border-bottom: 1px #CCC dashed;
+}
+.bar{
+    background-color: $blue;
+    height: 2px;
+}
+.bar.green{
+    background-color: $green;
+}
+
+.x{
+    color: $red;
+}
+
+.col3{
+    max-width: 32px;
+}
+.col2{
+    font-size: 11px;
+    line-height: 24px;
+    color: lighten($mauchu, 10%);
+    text-align: right;
+    max-width: 130px;
+}
+.col1{
+    font-size: 13px;
+    color: $mauchu;
+    text-align: left;
+    padding: 0;
+}
+
+img.thumbrecentcompleted{
+    height: 100px;
+    width: auto;
+    border: 1px dashed darken($light, 5%);
+}
+.modal-body.fileupload {
+    padding: 1px;
+}

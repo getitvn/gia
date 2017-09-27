@@ -7,6 +7,9 @@ import { SampleComponent } from '../contents/sample/sample.component';
 import { ProfileComponent } from '../contents/profile/profile.component';
 import { AddnewuserComponent } from '../contents/addnewuser/addnewuser.component';
 
+import { FileuploadComponent } from '../contents/fileupload/fileupload.component';
+import { FilebrowserComponent } from '../contents/filebrowser/filebrowser.component';
+
 const routes: Routes = [
   {
       path: '', component: LayoutComponent,
@@ -14,9 +17,10 @@ const routes: Routes = [
           { path: '' , redirectTo: 'dashboard', pathMatch: 'full'},
           { path: 'dashboard', component: DashboardComponent },
           { path: 'sample', component: SampleComponent },
+          { path: 'fileupload', component: FileuploadComponent },
+          { path: 'filebrowser', component: FilebrowserComponent },
           { path: 'profile', component: ProfileComponent },
-          { path: 'gotoprofile', redirectTo: 'profile', pathMatch: 'full' },
-          { path: 'addnewuser', component: AddnewuserComponent }
+          { path: 'addnewuser', component: AddnewuserComponent },
       ]
   }
 ];
